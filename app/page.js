@@ -1,7 +1,10 @@
+import { connectDB } from "@/lib/db"
+import Product from "@/models/Product"
 
 async function getProducts() {
-  const res = await fetch("http://localhost:3000/api/products", { cache: "no-store" })
-  return res.json()
+  await connectDB()
+  const products = await Product.find()
+  return products
 }
 
 export default async function Home() {
