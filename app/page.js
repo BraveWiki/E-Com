@@ -1,6 +1,6 @@
 
 async function getProducts() {
-  const res = await fetch(process.env.NEXT_PUBLIC_URL + "/api/products", { cache: "no-store" })
+  const res = await fetch("http://localhost:3000/api/products", { cache: "no-store" })
   return res.json()
 }
 
