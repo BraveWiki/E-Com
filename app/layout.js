@@ -4,7 +4,10 @@ export default function RootLayout({ children }) {
     <html>
       <body style={{ fontFamily: "Arial", padding: 20 }}>
         <h2>Simple E-Commerce</h2>
-  <div>
+ export default async function Home() {
+  const products = await getProducts()
+  return (
+    <div>
       {products.map(p => (
         <div key={p._id} style={{ border: "1px solid #ccc", marginBottom: 10, padding: 10 }}>
           <h3>{p.title}</h3>
@@ -13,6 +16,8 @@ export default function RootLayout({ children }) {
         </div>
       ))}
     </div>
+  )
+}
       </body>
     </html>
   )
